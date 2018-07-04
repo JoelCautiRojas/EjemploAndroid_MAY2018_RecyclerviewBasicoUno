@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.programadoresperuanos.www.ejemploandroid_may2018_recyclerview_uno.adaptadores.recycler_adapter_cardview;
+import com.programadoresperuanos.www.ejemploandroid_may2018_recyclerview_uno.adaptadores.recycler_adapter;
 import com.programadoresperuanos.www.ejemploandroid_may2018_recyclerview_uno.modelos.recycler_model;
 
 import java.util.ArrayList;
@@ -48,8 +48,8 @@ public class Main2Activity extends AppCompatActivity {
         datos.add(persona10);
         datos.add(persona11);
 
-        recycler = findViewById(R.id.recicler2);
-        recycler_adapter_cardview adaptador = new recycler_adapter_cardview(getApplicationContext(),datos);
+        recycler = findViewById(R.id.recicler);
+        recycler_adapter adaptador = new recycler_adapter(getApplicationContext(),datos);
         recycler.setAdapter(adaptador);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(this);
         recycler.setLayoutManager(manager);
@@ -72,6 +72,9 @@ public class Main2Activity extends AppCompatActivity {
                 return true;
             case R.id.opcion3:
                 startActivity(new Intent(getApplicationContext(),Main3Activity.class));
+                return true;
+            case R.id.opcion4:
+                startActivity(new Intent(getApplicationContext(),Main4Activity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
